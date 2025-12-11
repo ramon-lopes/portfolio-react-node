@@ -1,0 +1,342 @@
+/* ================================================= */
+/* 1. IMPORTAÇÃO E VARIÁVEIS GLOBAIS (THEME)        */
+/* ================================================= */
+
+/* Importação da fonte do Google Fonts (Roboto) */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+/* Definições de Cores e Estilos */
+:root {
+  --cor-fundo: #121212;
+  --cor-principal: #00bcd4; /* Ciano vibrante (Destaque) */
+  --cor-texto-claro: #f0f0f0;
+  --cor-secundaria: #333333; /* Cinza escuro (Divisores/Inputs) */
+  --cor-card: #1e1e1e; /* Cor do fundo dos cards */
+  --cor-sucesso: #4caf50; /* Verde para mensagens de sucesso */
+}
+
+/* ================================================= */
+/* 2. ESTILOS BASE (BODY E CONTAINER)              */
+/* ================================================= */
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-claro);
+  line-height: 1.6;
+}
+
+/* Container Principal - Garante Centralização */
+.meu-portfolio {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--cor-secundaria);
+  margin: 40px 0;
+}
+
+/* ================================================= */
+/* 3. CABEÇALHO E PERFIL                             */
+/* ================================================= */
+
+header {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 2px solid var(--cor-secundaria);
+  margin-bottom: 40px;
+}
+
+/* Imagem de Perfil (Placeholder) */
+.profile-image-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--cor-principal);
+  background-color: var(--cor-secundaria);
+}
+
+.profile-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* content: url('https://via.placeholder.com/150/00bcd4/121212?text=FOTO'); */
+}
+
+header h1 {
+  color: var(--cor-principal);
+  font-size: 2.8em;
+  margin-bottom: 5px;
+}
+
+header h2 {
+  color: var(--cor-texto-claro);
+  font-size: 1.4em;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+header nav a {
+  color: var(--cor-principal);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  padding: 0 10px;
+}
+
+header nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ================================================= */
+/* 4. SEÇÕES E TÍTULOS                               */
+/* ================================================= */
+
+section {
+  padding: 20px 0;
+}
+
+section h3 {
+  color: var(--cor-principal);
+  border-bottom: 1px dashed var(--cor-secundaria);
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+/* ================================================= */
+/* 5. CARDS DE PROJETO                               */
+/* ================================================= */
+
+.lista-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card-projeto {
+  background-color: var(--cor-card);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s, border-left 0.2s;
+  border-left: 5px solid transparent;
+}
+
+.card-projeto:hover {
+  transform: translateY(-5px);
+  border-left: 5px solid var(--cor-principal);
+}
+
+.card-projeto h4 {
+  color: var(--cor-texto-claro);
+  margin-top: 0;
+  font-size: 1.4em;
+}
+
+.card-projeto a {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--cor-principal);
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.card-projeto a:hover {
+  opacity: 1;
+}
+
+/* ================================================= */
+/* 6. SKILLS (Tags)                                  */
+/* ================================================= */
+
+#skills h4 {
+  color: var(--cor-principal);
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.skill-tag {
+  background-color: var(--cor-secundaria);
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-right: 8px;
+  margin-top: 5px;
+  border: 1px solid var(--cor-secundaria);
+  transition: background-color 0.3s;
+}
+
+.skill-tag:hover {
+  background-color: var(--cor-principal);
+  color: var(--cor-fundo);
+}
+
+/* ================================================= */
+/* 7. FORMAÇÃO ACADÊMICA                             */
+/* ================================================= */
+
+.lista-formacao {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-formacao {
+  background-color: var(--cor-card);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 5px solid var(--cor-principal);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-formacao h4 {
+  color: var(--cor-texto-claro);
+  font-size: 1.3em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card-formacao p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.descricao-formacao {
+  color: #ccc;
+  font-style: italic;
+  margin-top: 15px !important;
+}
+
+/* ================================================= */
+/* 8. FORMULÁRIO DE CONTATO                          */
+/* ================================================= */
+
+.contact-form {
+  display: grid;
+  gap: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--cor-texto-claro);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--cor-secundaria);
+  border-radius: 4px;
+  background-color: var(--cor-card);
+  color: var(--cor-texto-claro);
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.form-group textarea {
+  min-height: 150px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--cor-principal);
+}
+
+.btn-submit {
+  background-color: var(--cor-principal);
+  color: var(--cor-fundo);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.1s;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background-color: #008c9e;
+  transform: translateY(-1px);
+}
+
+.status-message {
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.status-success {
+  background-color: var(--cor-sucesso);
+  color: var(--cor-fundo);
+}
+
+.status-error {
+  background-color: #f44336; /* Vermelho para erro */
+  color: var(--cor-texto-claro);
+}
+
+/* ================================================= */
+/* 9. RODAPÉ                                         */
+/* ================================================= */
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px 0;
+  border-top: 1px solid var(--cor-secundaria);
+  font-size: 0.8em;
+  color: #888;
+}
+
+/* ================================================= */
+/* 10. MEDIA QUERIES (Responsividade)                */
+/* ================================================= */
+
+@media (max-width: 600px) {
+  .meu-portfolio {
+    margin: 0 auto;
+    padding: 20px 15px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+  header h2 {
+    font-size: 1.2em;
+  }
+
+  .lista-projetos {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-image-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .skill-tag {
+    font-size: 0.8em;
+    padding: 5px 10px;
+  }
+}
